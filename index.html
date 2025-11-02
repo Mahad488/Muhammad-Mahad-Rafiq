@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Accessible Developer Portfolio showcasing projects, skills, and contact details.">
+  <title>My Accessible Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Skip Navigation Link for Keyboard Users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Mahad Rafiq</h1>
+        <nav role="navigation" aria-label="Main Navigation">
+            <ul>
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- About Me Section -->
+        <section id="about-me" aria-labelledby="about-heading">
+            <h2 id="about-heading">About Me</h2>
+            <p>
+                Hi! I'm Mahad Rafiq, a passionate web developer specializing in front-end technologies like HTML, CSS, and JavaScript.
+                I focus on creating accessible, user-friendly websites that perform well across devices.
+            </p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Projects</h2>
+
+            <article>
+                <h3>Portfolio Website</h3>
+                <figure>
+                    <img src="images/portfolio.png" alt="Screenshot of Mahad Rafiq's responsive portfolio website displayed on a laptop and smartphone">
+                    <figcaption>A responsive portfolio built with HTML, CSS, and JavaScript, showcasing modern accessibility practices.</figcaption>
+                </figure>
+            </article>
+
+            <article>
+                <h3>Weather App</h3>
+                <figure>
+                    <img src="images/weather-app.png" alt="Screenshot of a weather app interface showing current temperature and weather icons">
+                    <figcaption>An interactive weather app built using the OpenWeatherMap API and JavaScript.</figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" aria-labelledby="skills-heading">
+            <h2 id="skills-heading">Skills</h2>
+            <ul>
+                <li>HTML5 & CSS3 (WCAG-compliant)</li>
+                <li>JavaScript (ES6+)</li>
+                <li>React.js</li>
+                <li>Node.js</li>
+                <li>Git & GitHub</li>
+                <li>Responsive & Accessible Design</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact Me</h2>
+            <form action="#" method="post" aria-describedby="form-help">
+                <p id="form-help">Fields marked with * are required.</p>
+
+                <label for="name">Name*:</label>
+                <input type="text" id="name" name="name" required aria-required="true">
+
+                <label for="email">Email*:</label>
+                <input type="email" id="email" name="email" required aria-required="true">
+
+                <label for="message">Message*:</label>
+                <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+
+                <button type="submit" aria-label="Send your message">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>&copy; 2025 Mahad Rafiq. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="scripts.js" defer></script>
+</body>
+</html>

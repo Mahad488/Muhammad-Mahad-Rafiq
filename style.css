@@ -1,0 +1,281 @@
+/* ========== Step 1: Basic Global Styles ========== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #222;
+  line-height: 1.6;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  background: #0077cc;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+/* ========== Step 2: Header and Navigation Bar ========== */
+header {
+  background-color: #003366;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+nav[role="navigation"] ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav[role="navigation"] a {
+  color: white;
+  font-weight: 500;
+}
+
+nav[role="navigation"] a:hover,
+nav[role="navigation"] a:focus {
+  color: #ffd700;
+}
+
+/* ========== Step 3: Section Layouts ========== */
+section {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* About Me */
+#about-me {
+  background-color: #ffffff;
+  text-align: center;
+}
+#about-me h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+#about-me p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Projects */
+#projects {
+  background-color: #eef2f7;
+}
+#projects h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#projects article {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 1rem;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+#projects article:hover {
+  transform: translateY(-5px);
+}
+#projects figure {
+  margin: 0;
+}
+#projects img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+#projects figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+#projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Skills */
+#skills ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+#skills li {
+  background: #003366;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  position: relative;
+  text-align: center;
+}
+#skills li::before {
+  content: "✓ ";
+  color: #ffd700;
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+/* Contact Form */
+#contact form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+#contact label {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+#contact input,
+#contact textarea {
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+#contact button {
+  margin-top: 1.5rem;
+  background-color: #0077cc;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+#contact button:hover,
+#contact button:focus {
+  background-color: #005fa3;
+}
+
+/* Footer */
+footer {
+  background: #003366;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ========== Step 5: Responsive Design ========== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav[role="navigation"] ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #projects {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ========== Step 6: Cross-Browser Compatibility ========== */
+header, nav, section, footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  nav[role="navigation"] ul {
+    display: none;
+    flex-direction: column;
+    background: #003366;
+    width: 100%;
+    padding: 1rem 0;
+  }
+  nav.active ul {
+    display: flex;
+  }
+}
+
+/* Lightbox */
+#lightbox {
+  position: fixed;
+  display: none;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+#lightbox.active {
+  display: flex;
+}
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
